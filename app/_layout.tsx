@@ -32,7 +32,7 @@ const TopLevelRouter = () => {
       }}
     >
       <Stack.Screen name="index" />
-
+      <Stack.Screen name="budget/[budgetId]" />
       <Stack.Screen
         name="budget/add"
         options={{
@@ -40,7 +40,6 @@ const TopLevelRouter = () => {
           presentation: "modal",
         }}
       />
-
       <Stack.Screen name="budget/edit" />
     </Stack>
   );

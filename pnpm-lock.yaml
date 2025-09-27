@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@legendapp/list':
+        specifier: ~2.0.8
+        version: 2.0.8(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.14)(react@19.1.0))(react@19.1.0)
       '@lukemorales/query-key-factory':
         specifier: ~1.3.4
         version: 1.3.4(@tanstack/query-core@5.90.2)(@tanstack/react-query@5.90.2(react@19.1.0))
@@ -1143,6 +1146,12 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@legendapp/list@2.0.8':
+    resolution: {integrity: sha512-k4QW76YdbxzZ7PX7EcVn/xp10bh0WDIgnqgx6oKtCYNqIGP4ctHqOT44bw5CGFwEvf8KTzvQZ+8eMCAdXdPL9g==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
 
   '@lukemorales/query-key-factory@1.3.4':
     resolution: {integrity: sha512-A3frRDdkmaNNQi6mxIshsDk4chRXWoXa05US8fBo4kci/H+lVmujS6QrwQLLGIkNIRFGjMqp2uKjC4XsLdydRw==}
@@ -5000,6 +5009,12 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@legendapp/list@2.0.8(react-native@0.81.4(@babel/core@7.28.4)(@types/react@19.1.14)(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-native: 0.81.4(@babel/core@7.28.4)(@types/react@19.1.14)(react@19.1.0)
+      use-sync-external-store: 1.5.0(react@19.1.0)
 
   '@lukemorales/query-key-factory@1.3.4(@tanstack/query-core@5.90.2)(@tanstack/react-query@5.90.2(react@19.1.0))':
     dependencies:
