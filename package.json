@@ -6,13 +6,16 @@
     "dev": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "format": "biome check --write"
+    "format": "biome check --write",
+    "ios:fresh": "rm -rf ios && pnpm run ios"
   },
   "dependencies": {
     "@shopify/restyle": "~2.4.5",
+    "@tanstack/react-form": "~1.23.4",
     "expo": "~54.0.10",
     "expo-constants": "~18.0.9",
     "expo-dev-client": "~6.0.12",
+    "expo-font": "~14.0.8",
     "expo-linking": "~8.0.8",
     "expo-router": "~6.0.8",
     "expo-sqlite": "~16.0.8",
@@ -20,7 +23,8 @@
     "react": "19.1.0",
     "react-native": "0.81.4",
     "react-native-safe-area-context": "~5.6.1",
-    "react-native-screens": "~4.16.0"
+    "react-native-screens": "~4.16.0",
+    "zod": "~4.1.11"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",

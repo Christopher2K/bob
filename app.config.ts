@@ -34,6 +34,16 @@ const config: ExpoConfig = {
   },
   plugins: [
     "expo-router",
+    [
+      "expo-font",
+      {
+        fonts: [
+          "./assets/fonts/OpenSans-Regular.ttf",
+          "./assets/fonts/OpenSans-SemiBold.ttf",
+          "./assets/fonts/OpenSans-Medium.ttf",
+        ],
+      },
+    ],
     ["expo-sqlite", {}],
     [
       "expo-dev-client",
