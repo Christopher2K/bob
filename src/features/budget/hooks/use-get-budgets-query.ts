@@ -5,14 +5,18 @@ import { orm, schema } from "@/services/sql";
 export const getBudgets = async () => orm.select().from(schema.budgetTable);
 
 export const useGetBudgetsQuery = () => {
-  const { data, isLoading, error } = useQuery({
+  const {
+    data: budgets,
+    isLoading: isBudgetsLoading,
+    error: budgetError,
+  } = useQuery({
     queryKey: queryKeys.budgets.all(),
     queryFn: getBudgets,
   });
 
   return {
-    budgets: data,
-    isBudgetsLoading: isLoading,
-    budgetError: error,
+    budgets,
+    isBudgetsLoading,
+    budgetError,
   };
 };
