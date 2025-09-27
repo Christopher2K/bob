@@ -1,4 +1,4 @@
-import { EditBudgetScreen } from "@/features/budget/edit-budget-screen";
+import { EditBudgetScreen } from "@/features/budget/screens/edit-budget-screen";
 
 export default function Screen() {
   return <EditBudgetScreen />;

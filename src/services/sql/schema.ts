@@ -19,3 +19,5 @@ export const budgetTable = d.sqliteTable("budget", {
   amountCents: d.integer("amount_cents", { mode: "number" }).notNull(),
   currency: d.text("currency").default("USD").notNull(),
 });
+export type NewBudget = typeof budgetTable.$inferInsert;
+export type Budget = typeof budgetTable.$inferSelect;

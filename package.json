@@ -11,8 +11,10 @@
     "migration:generate": "drizzle-kit generate"
   },
   "dependencies": {
+    "@lukemorales/query-key-factory": "~1.3.4",
     "@shopify/restyle": "~2.4.5",
     "@tanstack/react-form": "~1.23.4",
+    "@tanstack/react-query": "~5.90.2",
     "drizzle-orm": "~0.44.5",
     "expo": "~54.0.10",
     "expo-constants": "~18.0.9",
