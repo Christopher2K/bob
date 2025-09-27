@@ -43,7 +43,12 @@ const TopLevelRouter = () => {
           ),
         }}
       />
-      <Stack.Screen name="budget/[budgetId]" />
+      <Stack.Screen
+        name="budget/[budgetId]"
+        options={{
+          title: "",
+        }}
+      />
       <Stack.Screen
         name="budget/add"
         options={{
