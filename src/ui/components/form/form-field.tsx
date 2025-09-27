@@ -8,8 +8,13 @@ export type FormFieldProps = PropsWithChildren<{
 
 export const FormField = ({ children, label }: FormFieldProps) => {
   return (
-    <VStack width="100%" gap="s">
-      <Text variant="largeHighlight" width="100%">
+    <VStack
+      width="100%"
+      borderRadius="l"
+      backgroundColor="surface"
+      paddingVertical="xs"
+    >
+      <Text variant="smallHighlight" width="100%" paddingHorizontal="m">
         {label}
       </Text>
       <VStack width="100%">{children}</VStack>
