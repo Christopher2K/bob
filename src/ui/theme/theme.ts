@@ -8,7 +8,7 @@ export const theme = createTheme({
   colors,
   spacing,
   borderRadii,
-  textVariants: textVariants,
+  textVariants,
 });
 
 export type Theme = typeof theme;
