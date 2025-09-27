@@ -3,20 +3,32 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "dev": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "expo": "~54.0.10",
+    "expo-constants": "~18.0.9",
+    "expo-dev-client": "~6.0.12",
+    "expo-linking": "~8.0.8",
+    "expo-router": "~6.0.8",
+    "expo-sqlite": "~16.0.8",
     "expo-status-bar": "~3.0.8",
     "react": "19.1.0",
-    "react-native": "0.81.4"
+    "react-native": "0.81.4",
+    "react-native-safe-area-context": "~5.6.1",
+    "react-native-screens": "~4.16.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.4",
+    "@expo/metro-config": "~54.0.5",
+    "@types/node": "~24.5.2",
     "@types/react": "~19.1.0",
+    "babel-preset-expo": "~54.0.3",
+    "tsx": "~4.20.6",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
 }
