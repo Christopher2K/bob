@@ -36,7 +36,7 @@ const textVariants = {
   mediumHighlight: {
     fontSize: 16,
     lineHeight: 22,
-    fontFamily: fontFamily.medium,
+    fontFamily: fontFamily.semiBold,
   } satisfies TextStyle,
   small: {
     fontSize: 14,
