@@ -15,6 +15,13 @@
       "when": 1759010742463,
       "tag": "0001_thick_golden_guardian",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1759016118161,
+      "tag": "0002_kind_zodiak",
+      "breakpoints": true
     }
   ]
 }
