@@ -2,20 +2,20 @@ import { useForm } from "@tanstack/react-form";
 import { z } from "zod";
 import { Button, FormField, TextInput, VStack } from "@/ui/components";
 
-const BudgetSchema = z.object({
+const BudgetFormSchema = z.object({
   name: z.string(),
-  amountCents: z.string().refine((v) => Number(v) > 0),
+  amount: z.string().refine((v) => Number(v) > 0),
   currency: z.string(), // TODO: change to enum later
 });
-type BudgetType = z.infer<typeof BudgetSchema>;
-const defaultValues: BudgetType = {
+export type BudgetFormType = z.infer<typeof BudgetFormSchema>;
+const defaultValues: BudgetFormType = {
   name: "",
-  amountCents: "100",
+  amount: "100",
   currency: "USD",
 };
 
 export type BudgetFormProps = {
-  onSubmit: (values: BudgetType) => unknown;
+  onSubmit: (values: BudgetFormType) => unknown;
 };
 
 export const BudgetForm = ({ onSubmit }: BudgetFormProps) => {
@@ -23,7 +23,8 @@ export const BudgetForm = ({ onSubmit }: BudgetFormProps) => {
     onSubmit: (ctx) => onSubmit(ctx.value),
     defaultValues: defaultValues,
     validators: {
-      onBlur: BudgetSchema,
+      onBlur: BudgetFormSchema,
+      onSubmit: BudgetFormSchema,
     },
   });
 
@@ -39,23 +40,29 @@ export const BudgetForm = ({ onSubmit }: BudgetFormProps) => {
           )}
         />
         <form.Field
-          name="amountCents"
-          children={({ handleChange, state }) => (
-            <FormField label="Amount">
-              <TextInput
-                onChangeText={handleChange}
-                staticPrefix="USD"
-                value={state.value.toString()}
-              />
-            </FormField>
-          )}
-        />
-        <form.Field
           name="currency"
           children={({ handleChange, state }) => (
             <FormField label="Currency">
               <TextInput onChangeText={handleChange} value={state.value} />
             </FormField>
+          )}
+        />
+
+        <form.Subscribe
+          selector={({ values }) => values.currency}
+          children={(currency) => (
+            <form.Field
+              name="amount"
+              children={({ handleChange, state }) => (
+                <FormField label="Amount">
+                  <TextInput
+                    onChangeText={handleChange}
+                    staticPrefix={currency}
+                    value={state.value.toString()}
+                  />
+                </FormField>
+              )}
+            />
           )}
         />
       </VStack>
