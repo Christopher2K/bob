@@ -30,6 +30,7 @@ const TopLevelRouter = () => {
     <Stack
       screenOptions={{
         contentStyle: { backgroundColor: theme.colors.background },
+        headerBackButtonDisplayMode: "minimal",
       }}
     >
       <Stack.Screen
@@ -46,7 +47,7 @@ const TopLevelRouter = () => {
       <Stack.Screen
         name="budget/[budgetId]"
         options={{
-          title: "",
+          title: "Budget Overview",
         }}
       />
       <Stack.Screen

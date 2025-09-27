@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useNavigation } from "expo-router";
-import { useEffect } from "react";
+import { Button, ScreenContent, Text, VStack } from "@/ui/components";
 import { useGetBudgetQuery } from "../hooks/use-get-budget-query";
 
 export type BudgetDetailsScreenParams = {
@@ -7,16 +7,23 @@ export type BudgetDetailsScreenParams = {
 };
 
 export const BudgetDetailsScreen = () => {
-  const navigation = useNavigation();
   const { budgetId } = useLocalSearchParams<BudgetDetailsScreenParams>();
-  const { budget } = useGetBudgetQuery({ id: Number(budgetId) });
+  const { budget, isBudgetLoading } = useGetBudgetQuery({
+    id: Number(budgetId),
+  });
 
-  useEffect(() => {
-    if (!budget?.name) return;
-    navigation.setOptions({
-      title: `${budget?.name} overview`,
-    });
-  }, [budget?.name, navigation]);
+  // TODO: Skeleton
+  if (isBudgetLoading) return null;
 
-  return <></>;
+  if (budget == null) return null;
+
+  return (
+    <ScreenContent>
+      <VStack gap="m">
+        <Text variant="heading1">{budget.name}</Text>
+        <Button label="Add expense category" />
+        <Button label="Add specific expense" />
+      </VStack>
+    </ScreenContent>
+  );
 };

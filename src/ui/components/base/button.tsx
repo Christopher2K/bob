@@ -17,7 +17,6 @@ export const Button = ({ label, fullWidth, ...props }: ButtonProps) => {
     >
       <Pressable
         {...props}
-        flexGrow={1}
         alignSelf="stretch"
         justifyContent="center"
         alignItems="center"
