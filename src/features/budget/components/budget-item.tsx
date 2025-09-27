@@ -34,7 +34,7 @@ export const BudgetItem = ({ budget }: BudgetItemProps) => {
             <Text>{budget.name}</Text>
             <Text>
               <Text variant="mediumHighlight">{budget.currency}&nbsp;</Text>
-              {budget.amountCents}
+              {budget.amountCents / 100}
             </Text>
           </HStack>
         </VStack>

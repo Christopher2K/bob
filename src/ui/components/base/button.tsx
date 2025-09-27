@@ -15,7 +15,13 @@ export const Button = ({ label, fullWidth, ...props }: ButtonProps) => {
       justifyContent="center"
       alignItems="center"
     >
-      <Pressable {...props}>
+      <Pressable
+        {...props}
+        flexGrow={1}
+        alignSelf="stretch"
+        justifyContent="center"
+        alignItems="center"
+      >
         <Text
           variant="mediumHighlight"
           color="background"

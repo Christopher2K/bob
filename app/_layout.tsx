@@ -1,3 +1,4 @@
+import { Button } from "@react-navigation/elements";
 import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
 import { useDrizzleStudio } from "expo-drizzle-studio-plugin";
 import { Stack } from "expo-router";
@@ -31,7 +32,17 @@ const TopLevelRouter = () => {
         contentStyle: { backgroundColor: theme.colors.background },
       }}
     >
-      <Stack.Screen name="index" />
+      <Stack.Screen
+        name="index"
+        options={{
+          title: "Budgets",
+          headerRight: () => (
+            <Button variant="plain" screen="budget/add" params={{}}>
+              Add budget
+            </Button>
+          ),
+        }}
+      />
       <Stack.Screen name="budget/[budgetId]" />
       <Stack.Screen
         name="budget/add"
