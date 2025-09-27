@@ -15,13 +15,9 @@ export const TextInput = ({ style, ...props }: TextInputProps) => {
   return (
     <ThemedTextInput
       width="100%"
-      borderRadius="s"
-      borderWidth={1}
-      borderStyle="solid"
-      borderColor="text"
       paddingHorizontal="m"
       paddingVertical="m"
-      style={theme.textVariants.medium}
+      style={[{ ...theme.textVariants.medium, lineHeight: undefined }]}
       {...props}
     />
   );
