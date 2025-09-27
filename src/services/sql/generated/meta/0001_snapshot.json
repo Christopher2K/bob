@@ -1,8 +1,8 @@
 {
+  "id": "a3f433a8-a15b-4b20-a5ff-d08e849725a1",
+  "prevId": "576dea4b-2fc7-466d-abc4-85d5a9f3de50",
   "version": "6",
   "dialect": "sqlite",
-  "id": "576dea4b-2fc7-466d-abc4-85d5a9f3de50",
-  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "budget": {
       "name": "budget",
@@ -133,9 +133,9 @@
   "views": {},
   "enums": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
+    "tables": {}
   },
   "internal": {
     "indexes": {}

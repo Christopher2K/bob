@@ -21,3 +21,17 @@ export const budgetTable = d.sqliteTable("budget", {
 });
 export type NewBudget = typeof budgetTable.$inferInsert;
 export type Budget = typeof budgetTable.$inferSelect;
+
+export const categoryTable = d.sqliteTable("category", {
+  ...commonColumns,
+  name: d.text("name").notNull(),
+  description: d.text("description"),
+  color: d.text("color").notNull().default("#000000"),
+  iconName: d.text("icon_name"),
+  is_default: d
+    .integer("is_default", { mode: "boolean" })
+    .notNull()
+    .default(false),
+});
+export type NewCategory = typeof categoryTable.$inferInsert;
+export type Category = typeof categoryTable.$inferSelect;
