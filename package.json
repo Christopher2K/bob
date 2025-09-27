@@ -7,11 +7,13 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "format": "biome check --write",
-    "ios:fresh": "rm -rf ios && pnpm run ios"
+    "ios:fresh": "rm -rf ios && pnpm run ios",
+    "migration:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@shopify/restyle": "~2.4.5",
     "@tanstack/react-form": "~1.23.4",
+    "drizzle-orm": "~0.44.5",
     "expo": "~54.0.10",
     "expo-constants": "~18.0.9",
     "expo-dev-client": "~6.0.12",
@@ -31,7 +33,10 @@
     "@expo/metro-config": "~54.0.5",
     "@types/node": "~24.5.2",
     "@types/react": "~19.1.0",
+    "babel-plugin-inline-import": "~3.0.0",
     "babel-preset-expo": "~54.0.3",
+    "drizzle-kit": "~0.31.5",
+    "expo-drizzle-studio-plugin": "~0.2.0",
     "tsx": "~4.20.6",
     "typescript": "~5.9.2"
   },

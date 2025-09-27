@@ -1,5 +1,8 @@
-import { getDefaultConfig } from "expo/metro-config";
+import { getDefaultConfig, type MetroConfig } from "expo/metro-config";
 
-const config = getDefaultConfig(__dirname);
+const config = getDefaultConfig(__dirname) as MetroConfig;
+
+// @ts-expect-error
+config.resolver.sourceExts.push("sql");
 
 module.exports = config;
