@@ -1,6 +1,10 @@
+import { createBox } from "@shopify/restyle";
 import { Pressable, type PressableProps } from "react-native";
+import type { Theme } from "@/ui/theme";
 import { Box } from "./box";
 import { Text } from "./text";
+
+const ThemedPressable = createBox<Theme, PressableProps>(Pressable);
 
 type ButtonProps = Omit<PressableProps, "children"> & {
   label: string;
@@ -12,8 +16,10 @@ export const Button = ({ label, fullWidth, ...props }: ButtonProps) => {
       backgroundColor="text"
       borderRadius="l"
       width={fullWidth ? "100%" : null}
+      justifyContent="center"
+      alignItems="center"
     >
-      <Pressable {...props}>
+      <ThemedPressable {...props}>
         <Text
           variant="mediumHighlight"
           color="background"
@@ -22,7 +28,7 @@ export const Button = ({ label, fullWidth, ...props }: ButtonProps) => {
         >
           {label}
         </Text>
-      </Pressable>
+      </ThemedPressable>
     </Box>
   );
 };

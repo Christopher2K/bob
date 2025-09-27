@@ -1,6 +1,6 @@
 import { Box, type BoxProps } from "./box";
 
-type VStackProps = BoxProps;
+export type VStackProps = BoxProps;
 export const VStack = ({
   flexDirection = "column",
   justifyContent = "flex-start",

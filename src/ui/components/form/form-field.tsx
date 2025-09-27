@@ -12,9 +12,10 @@ export const FormField = ({ children, label }: FormFieldProps) => {
       width="100%"
       borderRadius="l"
       backgroundColor="surface"
-      paddingVertical="xs"
+      paddingTop="s"
+      paddingBottom="xs"
     >
-      <Text variant="smallHighlight" width="100%" paddingHorizontal="m">
+      <Text variant="small" width="100%" paddingHorizontal="m">
         {label}
       </Text>
       <VStack width="100%">{children}</VStack>
