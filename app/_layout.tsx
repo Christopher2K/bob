@@ -1,11 +1,14 @@
-import { Button } from "@react-navigation/elements";
+import { useTheme } from "@shopify/restyle";
 import { useMigrations } from "drizzle-orm/expo-sqlite/migrator";
 import { useDrizzleStudio } from "expo-drizzle-studio-plugin";
 import { Stack } from "expo-router";
 import { AppProvider } from "@/app-provider";
 import { db, orm } from "@/services/sql/db";
 import migrations from "@/services/sql/generated/migrations";
-import { useTheme } from "@/ui/theme/use-theme";
+
+export const unstable_settings = {
+  initialRouteName: "ui-elements",
+};
 
 export default function Layout() {
   const { success, error } = useMigrations(orm, migrations);
@@ -27,37 +30,15 @@ const TopLevelRouter = () => {
   const theme = useTheme();
 
   return (
-    <Stack
-      screenOptions={{
-        contentStyle: { backgroundColor: theme.colors.background },
-        headerBackButtonDisplayMode: "minimal",
-      }}
-    >
+    <Stack>
       <Stack.Screen
-        name="index"
+        name="(onboarding)/index"
         options={{
-          title: "Budgets",
-          headerRight: () => (
-            <Button variant="plain" screen="budget/add" params={{}}>
-              Add budget
-            </Button>
-          ),
+          contentStyle: { backgroundColor: theme.colors.background },
+          headerShown: false,
         }}
       />
-      <Stack.Screen
-        name="budget/[budgetId]"
-        options={{
-          title: "Budget Overview",
-        }}
-      />
-      <Stack.Screen
-        name="budget/add"
-        options={{
-          title: "New budget",
-          presentation: "modal",
-        }}
-      />
-      <Stack.Screen name="budget/edit" />
+      <Stack.Screen name="(onboarding)/initial-budget" />
     </Stack>
   );
 };

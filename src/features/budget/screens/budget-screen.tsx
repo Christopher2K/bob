@@ -1,5 +1,4 @@
-import { LegendList } from "@legendapp/list";
-import { Link } from "expo-router";
+import { FlatList } from "react-native";
 import { Box, ScreenContent } from "@/ui/components";
 import { useTheme } from "@/ui/theme/use-theme";
 import { BudgetItem } from "../components/budget-item";
@@ -15,7 +14,7 @@ export const BudgetScreen = () => {
 
   return (
     <ScreenContent withVerticalPadding={false} flexGrow={1}>
-      <LegendList
+      <FlatList
         style={{ width: "100%", paddingTop: theme.spacing.l }}
         ItemSeparatorComponent={() => (
           <Box height={theme.spacing.m} accessible={false} />
