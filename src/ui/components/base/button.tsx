@@ -22,10 +22,10 @@ export const Button = ({ label, fullWidth, ...props }: ButtonProps) => {
         alignItems="center"
       >
         <Text
-          variant="mediumHighlight"
+          variant="largeHighlight"
           color="background"
           paddingHorizontal="xl"
-          paddingVertical="m"
+          paddingVertical="l"
         >
           {label}
         </Text>

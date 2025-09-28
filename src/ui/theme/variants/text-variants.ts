@@ -14,25 +14,27 @@ const textVariants = {
     fontFamily: fontFamily.semiBold,
   } satisfies TextStyle,
   heading3: {
-    fontSize: 22,
+    fontSize: 20,
     lineHeight: 26,
     fontFamily: fontFamily.semiBold,
   } satisfies TextStyle,
   large: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: fontFamily.regular,
   } satisfies TextStyle,
   largeHighlight: {
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: fontFamily.medium,
   } satisfies TextStyle,
   medium: {
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: fontFamily.regular,
+    letterSpacing: 0.2,
   } satisfies TextStyle,
   mediumHighlight: {
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: fontFamily.semiBold,
+    letterSpacing: 0.2,
   } satisfies TextStyle,
   small: {
     fontSize: 14,
